@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://rvquvmxt5vhd"]
+
+[ext_resource type="Texture2D" uid="uid://c6vow70w758vk" path="res://Art/ui/LevelCompletion/ui_big_button_label_completed.png" id="1_6y3l6"]
+[ext_resource type="Script" path="res://ui/completion_screen/CompletetionScreen.gd" id="1_mhesn"]
+[ext_resource type="Texture2D" uid="uid://c8v2pyjc4mmu8" path="res://Art/ui/LevelCompletion/ui_big_button_menu.png" id="2_tim0s"]
+[ext_resource type="Texture2D" uid="uid://dtok3hfcjn2hm" path="res://Art/ui/LevelCompletion/ui_big_button_Next.png" id="2_w4utd"]
+[ext_resource type="PackedScene" uid="uid://dckvjxjre1ypi" path="res://Util/Transitions/BlackTransition/BlackTransition.tscn" id="5_kslpa"]
+
+[node name="CompletetionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhesn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 1158.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.284
+anchor_right = 0.016
+anchor_bottom = 0.284
+offset_left = 135.568
+offset_top = 260.968
+offset_right = 2230.57
+offset_bottom = 516.968
+scale = Vector2(0.4, 0.4)
+
+[node name="Menu" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_tim0s")
+
+[node name="Next" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_w4utd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 41.0
+offset_right = 1655.0
+offset_bottom = 297.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_6y3l6")
+
+[node name="BlackTransition" parent="." instance=ExtResource("5_kslpa")]
+layout_mode = 1
+
+[connection signal="pressed" from="HBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]

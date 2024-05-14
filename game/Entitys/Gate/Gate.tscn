@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmtnn81anhrut"]
+
+[ext_resource type="PackedScene" uid="uid://b3g70duukjjph" path="res://Util/IconComponent/IconComponent.tscn" id="1_t0url"]
+[ext_resource type="Texture2D" uid="uid://bi2eoaffigswr" path="res://Art/gate/gate_closed.png" id="2_t8e21"]
+[ext_resource type="Script" path="res://Entitys/Gate/Gate.gd" id="3_yleif"]
+[ext_resource type="Script" path="res://Entitys/Gate/Gate_checker.gd" id="4_e5bhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acydr"]
+size = Vector2(255.5, 255.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gjeo"]
+size = Vector2(4.125, 4.125)
+
+[node name="Gate" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 1.66533e-16
+script = ExtResource("3_yleif")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(128, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("2_t8e21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(128, 128)
+shape = SubResource("RectangleShape2D_acydr")
+
+[node name="IconComponent" parent="." instance=ExtResource("1_t0url")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1.5, 1.5)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_e5bhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13.9375, 13.9375)
+shape = SubResource("RectangleShape2D_2gjeo")
+
+[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_exited"]

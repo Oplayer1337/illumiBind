@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfl4qt2m3d45d"]
+
+[ext_resource type="Texture2D" uid="uid://bo5xrih8sq227" path="res://Art/ui/main menu/Background_menu.png" id="1_ha28g"]
+[ext_resource type="Texture2D" uid="uid://6pc52agnamyf" path="res://Art/ui/LevelSelection/ui_big_button_label_levels.png" id="1_r3kus"]
+[ext_resource type="Script" path="res://ui/level_selection/LevelSelection.gd" id="1_vjrqr"]
+[ext_resource type="Texture2D" uid="uid://qt61b48pcgpu" path="res://Art/ui/LevelSelection/icon_left_arrow.png" id="2_0vck2"]
+[ext_resource type="PackedScene" uid="uid://cetve04alweft" path="res://ui/LevelGrid/LevelGrid.tscn" id="2_26310"]
+[ext_resource type="Texture2D" uid="uid://cxub270h7fhnp" path="res://Art/ui/LevelSelection/icon_right_arrow.png" id="4_oahgf"]
+[ext_resource type="Texture2D" uid="uid://cvjfc628a2odj" path="res://Art/ui/PauseMenu/ui_big_button_menu.png" id="6_4bovp"]
+[ext_resource type="PackedScene" uid="uid://dckvjxjre1ypi" path="res://Util/Transitions/BlackTransition/BlackTransition.tscn" id="8_am60b"]
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1159.0
+offset_bottom = 652.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjrqr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -128.0
+offset_right = 2880.0
+offset_bottom = 1920.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ha28g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 9600.0
+offset_bottom = 5367.0
+scale = Vector2(0.23, 0.23)
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_r3kus")
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelBack" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("2_0vck2")
+
+[node name="LevelGrid" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_26310")]
+custom_minimum_size = Vector2(3250, 3250)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="LevelForward" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture_normal = ExtResource("4_oahgf")
+
+[node name="Menu" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 800)
+layout_mode = 2
+texture_normal = ExtResource("6_4bovp")
+stretch_mode = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1152, 648)
+zoom = Vector2(0.5, 0.5)
+
+[node name="BlackTransition" parent="." instance=ExtResource("8_am60b")]
+layout_mode = 1
+offset_right = 1219.0
+offset_bottom = 686.0
+
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

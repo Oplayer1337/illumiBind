@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dft2na4863xff"]
+
+[ext_resource type="Script" path="res://ui/main_menu/MainMenu.gd" id="1_lbsna"]
+[ext_resource type="Texture2D" uid="uid://bgyog6lnqtcd6" path="res://Art/ui/main menu/ui_big_button_play.png" id="2_0vl20"]
+[ext_resource type="Texture2D" uid="uid://bo5xrih8sq227" path="res://Art/ui/main menu/Background_menu.png" id="2_gw1qc"]
+[ext_resource type="Texture2D" uid="uid://bvxmd24ocl4rc" path="res://Art/ui/main menu/ui_big_button_label.png" id="2_vwcgw"]
+[ext_resource type="Texture2D" uid="uid://mjr28k3vtp6m" path="res://Art/ui/main menu/ui_big_button_label_hover.png" id="3_03lo8"]
+[ext_resource type="Texture2D" uid="uid://bjqbxtfyxw3wh" path="res://Art/ui/main menu/ui_big_button_exit.png" id="3_os0cp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 2.067
+anchor_bottom = 2.594
+offset_right = 489.816
+offset_bottom = -65.9121
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbsna")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -83.0
+offset_right = 2881.0
+offset_bottom = 1965.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_gw1qc")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 2.0
+offset_right = 8560.0
+offset_bottom = 6952.0
+scale = Vector2(0.2, 0.2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="IllumiBind" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 2000)
+layout_mode = 2
+texture_normal = ExtResource("2_vwcgw")
+texture_hover = ExtResource("3_03lo8")
+
+[node name="Play" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 1200)
+layout_mode = 2
+texture_normal = ExtResource("2_0vl20")
+
+[node name="Exit" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_os0cp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1152, 729)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/IllumiBind" to="." method="_on_illumi_bind_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

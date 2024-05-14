@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqskocgfua5q"
+path="res://.godot/imported/silence.mp3-dd218cce3974fbaffa625b6d6ab4c946.mp3str"
+
+[deps]
+
+source_file="res://Sfx/Ui/Error sound/silence.mp3"
+dest_files=["res://.godot/imported/silence.mp3-dd218cce3974fbaffa625b6d6ab4c946.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

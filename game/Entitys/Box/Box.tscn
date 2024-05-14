@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dluqd6jhc67vt"]
+
+[ext_resource type="Script" path="res://Entitys/Box/RigidBody2D.gd" id="1_c4cwi"]
+[ext_resource type="PackedScene" uid="uid://bom47kbx2gkpb" path="res://Util/ColorComponent/ColorComponent.tscn" id="3_qv2kl"]
+[ext_resource type="Texture2D" uid="uid://fksr0k003654" path="res://Art/box/Box.png" id="3_y7bi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohtog"]
+size = Vector2(254.5, 255.5)
+
+[node name="Box" type="Node2D"]
+metadata/Color = "red"
+
+[node name="ColorComponent" parent="." instance=ExtResource("3_qv2kl")]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 1.66533e-16
+script = ExtResource("1_c4cwi")
+tile_size = 256
+speed = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(127.75, 128.25)
+shape = SubResource("RectangleShape2D_ohtog")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(128, 128)
+scale = Vector2(2, 2)
+texture = ExtResource("3_y7bi4")
+
+[node name="RayCast2D" type="RayCast2D" parent="RigidBody2D"]
+position = Vector2(64, 64)
+target_position = Vector2(16, 2.08165e-12)
+collide_with_areas = true

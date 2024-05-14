@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://jsxvrcenm82r"]
+
+[ext_resource type="PackedScene" uid="uid://b3g70duukjjph" path="res://Util/IconComponent/IconComponent.tscn" id="1_vm3l3"]
+[ext_resource type="Script" path="res://Entitys/Button/Button.gd" id="1_yqg8y"]
+[ext_resource type="Texture2D" uid="uid://cxwmxq3k368p8" path="res://Art/button/Button.png" id="2_1ixpd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxmfq"]
+size = Vector2(127.368, 127.368)
+
+[node name="Button" type="Node2D"]
+scale = Vector2(1.95, 1.95)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_yqg8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(64, 64)
+texture = ExtResource("2_1ixpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_sxmfq")
+
+[node name="IconComponent" parent="." instance=ExtResource("1_vm3l3")]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

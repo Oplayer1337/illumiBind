@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bom47kbx2gkpb"]
+
+[ext_resource type="Script" path="res://Util/ColorComponent/ColorComponent.gd" id="1_aywim"]
+
+[node name="ColorComponent" type="Node"]
+script = ExtResource("1_aywim")

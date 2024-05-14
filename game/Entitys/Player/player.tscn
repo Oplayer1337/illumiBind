@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://e5jksqiuj06a"]
+
+[ext_resource type="Script" path="res://Entitys/Player/Movement.gd" id="1_lgfrp"]
+[ext_resource type="Texture2D" uid="uid://cqyvxivfrb2wl" path="res://Art/player/Player_export.png" id="2_agpej"]
+[ext_resource type="PackedScene" uid="uid://bom47kbx2gkpb" path="res://Util/ColorComponent/ColorComponent.tscn" id="3_4tn1p"]
+[ext_resource type="PackedScene" uid="uid://fc44lhffe5kg" path="res://Entitys/Player/PlayerComponent.tscn" id="4_023aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehw1i"]
+size = Vector2(16, 16)
+
+[node name="Player" type="Node2D"]
+position = Vector2(8, 8)
+metadata/Color = ""
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_lgfrp")
+tile_size = 256
+base_move_delay = 0.17
+speed = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(120, 120)
+scale = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ehw1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(120, 120)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_agpej")
+hframes = 4
+vframes = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
+position = Vector2(120, 120)
+target_position = Vector2(16, 2.08165e-12)
+collide_with_areas = true
+
+[node name="ColorComponent" parent="." instance=ExtResource("3_4tn1p")]
+
+[node name="PlayerComponent" parent="." instance=ExtResource("4_023aj")]
