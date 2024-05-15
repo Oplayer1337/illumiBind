@@ -29,12 +29,3 @@ func _input(event):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED) 
 			is_fullscreen = false
-			
-	elif Input.is_action_just_pressed("ui_mute"):
-		if !is_muted:
-			pass
-			is_muted = true
-		else:
-			pass
-			is_muted = false
-	

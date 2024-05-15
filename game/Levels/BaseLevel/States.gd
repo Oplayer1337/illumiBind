@@ -17,8 +17,9 @@ var undo_pressed: bool = false
 
 func save_state():
 	var state = State.new()
-	
+	#print("-----------------------")
 	for obj in get_tree().get_nodes_in_group("object"):
+		print(obj)
 		var obj_state = {}
 		
 		var collision_shape = obj.find_child("CollisionShape2D")
@@ -26,20 +27,32 @@ func save_state():
 		
 		obj_state["position"] = collision_shape_parent.global_position
 		obj_state["collision"] = collision_shape.disabled
+		obj_state["visible"] = obj.visible
+		obj_state["alive"] = collision_shape_parent.is_alive
+		#print(obj_state)
+		#print()
 		state.object_states[obj.get_instance_id()] = obj_state
 	
 		
 	move_history.append(state)
 
-func restore_state(state: State):
+func restore_state(state: State, curr_state: State):
 	for obj in get_tree().get_nodes_in_group("object"):
 		var id = obj.get_instance_id()
 		
+		print("----------------------")
 		if id in state.object_states:
 			var obj_state = state.object_states[id]
 			var collision_shape = obj.find_child("CollisionShape2D")		
 			var collision_shape_parent = collision_shape.get_parent()
-			collision_shape_parent.global_position = obj_state["position"]
+			print(obj)
+			print(obj_state)
+			print()
+			
+			if curr_state.object_states[id]["alive"]:
+				collision_shape_parent.global_position = obj_state["position"]
+				collision_shape_parent.is_alive = obj_state["alive"]
+				obj.visible = obj_state["visible"]
 
 	
 	
@@ -64,24 +77,27 @@ func on_player_save_game():
 	
 func undo_move():
 	while undo_pressed:
+		await get_tree().create_timer(base_timer_speed).timeout
 		if move_history.size() < 2:
 			return
-		SfxController.player_undo()
 		
+		if !undo_pressed:
+			return
+		SfxController.player_undo()
 		var last_state = move_history[-2]
+		var curr_state = move_history[-1]
 		move_history.pop_back()
 		
 		disable_collisions_for_undo()
 		await get_tree().create_timer(0.015).timeout
 		
-		restore_state(last_state)
+		restore_state(last_state,curr_state)
 		
 		await get_tree().create_timer(0.015).timeout
 		enable_collisions_after_undo(last_state)
 		
 		if base_timer_speed > timer_cap:
 			base_timer_speed *= incrementor
-		await get_tree().create_timer(base_timer_speed).timeout
 
 func _ready():
 	TransitionController.reset()

@@ -3,6 +3,7 @@ extends Area2D
 @onready var iconComponent = $IconComponent
 @onready var sprite2D: Sprite2D = $Sprite2D
 var icon_name: String = ""
+var is_alive: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_parent().add_to_group("static")

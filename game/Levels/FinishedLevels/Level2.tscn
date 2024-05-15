@@ -104,6 +104,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 131072, 0, 2, 65536, 3, 3, 1310
 [node name="Player" parent="." instance=ExtResource("3_mfh6r")]
 position = Vector2(264, 264)
 metadata/Color = "white"
+metadata/Fragile = false
 
 [node name="Flag" parent="." instance=ExtResource("4_sstlm")]
 position = Vector2(2560, 1280)
@@ -125,6 +126,7 @@ offset_bottom = 532.12
 
 [node name="Box" parent="." instance=ExtResource("6_o7b21")]
 position = Vector2(1024, 256)
+metadata/Fragile = false
 
 [node name="Box2" parent="." instance=ExtResource("6_o7b21")]
 position = Vector2(1280, 768)

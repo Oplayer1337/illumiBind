@@ -2,6 +2,7 @@ extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
+var is_alive: bool = false
 @onready var completionscreen = load("res://ui/completion_screen/CompletetionScreen.tscn")
 func _ready():
 	get_parent().add_to_group("object")

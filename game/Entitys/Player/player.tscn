@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://e5jksqiuj06a"]
+[gd_scene load_steps=7 format=3 uid="uid://e5jksqiuj06a"]
 
 [ext_resource type="Script" path="res://Entitys/Player/Movement.gd" id="1_lgfrp"]
 [ext_resource type="Texture2D" uid="uid://cqyvxivfrb2wl" path="res://Art/player/Player_export.png" id="2_agpej"]
 [ext_resource type="PackedScene" uid="uid://bom47kbx2gkpb" path="res://Util/ColorComponent/ColorComponent.tscn" id="3_4tn1p"]
 [ext_resource type="PackedScene" uid="uid://fc44lhffe5kg" path="res://Entitys/Player/PlayerComponent.tscn" id="4_023aj"]
+[ext_resource type="PackedScene" uid="uid://m4s05c5o4cs6" path="res://Util/FragileComponent/FragileComponent.tscn" id="5_pax0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehw1i"]
 size = Vector2(16, 16)
@@ -14,7 +15,6 @@ metadata/Color = ""
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_lgfrp")
-tile_size = 256
 base_move_delay = 0.17
 speed = 256
 
@@ -38,3 +38,5 @@ collide_with_areas = true
 [node name="ColorComponent" parent="." instance=ExtResource("3_4tn1p")]
 
 [node name="PlayerComponent" parent="." instance=ExtResource("4_023aj")]
+
+[node name="FragileComponent" parent="." instance=ExtResource("5_pax0c")]

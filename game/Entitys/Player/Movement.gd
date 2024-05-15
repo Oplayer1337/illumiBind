@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Movement
 
 
-@export var tile_size: int = 16
+@export var tile_size: int = 256
 @onready var ray: RayCast2D = $RayCast2D
 @export var base_move_delay: float = 0.25
 var move_delay: float = 0.25
@@ -12,6 +12,7 @@ var move_delay: float = 0.25
 
 #var boxes_to_move: Dictionary = {}
 
+var is_alive: bool = true
 var can_move = true
 var target_position: Vector2 = Vector2()
 var delay_from_last_input: float = 0.20
@@ -20,6 +21,7 @@ var group_to_move: String = 'default'
 signal save_game
 
 func _ready():
+	position = position.snapped(Vector2.ONE * 256)
 	target_position = position.snapped(Vector2.ONE * tile_size)
 	pass
 	
@@ -27,6 +29,8 @@ func _ready():
 
 var previous_input: Vector2 = Vector2(0,1)
 func _physics_process(delta):
+	if !is_alive:
+		return
 	delay_from_last_input += delta
 	
 	var movementVector: Vector2 = Vector2(int(Input.is_action_pressed('ui_right')) - int(Input.is_action_pressed('ui_left')),
@@ -66,7 +70,7 @@ func move(direction: Vector2):
 	#print(Globals.unactive_buttons)
 	Globals.boxes_to_move = {}
 	Globals.boxes_pool = {}
-	ray.target_position = direction * tile_size
+	ray.target_position = direction * tile_size * 0.8
 	ray.force_raycast_update()
 	var collider = ray.get_collider()
 	

@@ -9,8 +9,9 @@ var has_body: bool = false
 var open_texture: Texture = preload("res://Art/gate/gate_open.png")
 var closed_texture: Texture = preload("res://Art/gate/gate_closed.png")
 var i: int = 0
-
+var is_alive: bool = false
 func _ready():
+	position = position.snapped(Vector2.ONE * 256)
 	get_parent().add_to_group("object")
 	get_parent().add_to_group("has_states")
 	icon_name = get_parent().get_meta("Icon")
@@ -40,6 +41,9 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_body_exited(body):
+	await get_tree().create_timer(0.02).timeout
+	if has_body:
+		return
 	var parent: Node2D = body.get_parent()
 	parent.remove_from_group("static")
 	has_body = false

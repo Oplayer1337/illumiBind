@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dluqd6jhc67vt"]
+[gd_scene load_steps=6 format=3 uid="uid://dluqd6jhc67vt"]
 
 [ext_resource type="Script" path="res://Entitys/Box/RigidBody2D.gd" id="1_c4cwi"]
+[ext_resource type="PackedScene" uid="uid://m4s05c5o4cs6" path="res://Util/FragileComponent/FragileComponent.tscn" id="1_rp5al"]
 [ext_resource type="PackedScene" uid="uid://bom47kbx2gkpb" path="res://Util/ColorComponent/ColorComponent.tscn" id="3_qv2kl"]
 [ext_resource type="Texture2D" uid="uid://fksr0k003654" path="res://Art/box/Box.png" id="3_y7bi4"]
 
@@ -12,10 +13,12 @@ metadata/Color = "red"
 
 [node name="ColorComponent" parent="." instance=ExtResource("3_qv2kl")]
 
+[node name="FragileComponent" parent="." instance=ExtResource("1_rp5al")]
+
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 gravity_scale = 1.66533e-16
+lock_rotation = true
 script = ExtResource("1_c4cwi")
-tile_size = 256
 speed = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
@@ -28,6 +31,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_y7bi4")
 
 [node name="RayCast2D" type="RayCast2D" parent="RigidBody2D"]
-position = Vector2(64, 64)
+position = Vector2(128, 128)
 target_position = Vector2(16, 2.08165e-12)
 collide_with_areas = true

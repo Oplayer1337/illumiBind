@@ -1,17 +1,18 @@
 extends RigidBody2D
-class_name Box
 
-@export var tile_size: int = 16
+
+@export var tile_size: int = 256
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite2d: Sprite2D = $Sprite2D
 @export var speed: int = 16
 @onready var colorComponent = $ColorComponent
 var target_position: Vector2 = Vector2()
-
+var is_alive: bool = true
 var group_to_move: String = String()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	position = position.snapped(Vector2.ONE * 256)
 	get_parent().add_to_group("object")
 	get_parent().add_to_group("has_states")
 	get_parent().add_to_group("box")
@@ -22,7 +23,7 @@ func _ready():
 
 
 func move_box(direction: Vector2) -> bool:
-	ray.target_position = direction * tile_size
+	ray.target_position = direction * tile_size * 0.8
 	ray.force_raycast_update()
 	
 	var collider = ray.get_collider()
