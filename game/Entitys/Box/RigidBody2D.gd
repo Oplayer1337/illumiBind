@@ -39,6 +39,8 @@ func move_box(direction: Vector2) -> bool:
 			self.find_child("CollisionShape2D").disabled = false
 			return true
 		
+		if collider.get_parent().is_in_group("gate_closed"):
+			return false
 		if collider.get_parent().is_in_group('static'):
 			change_position(direction)
 			return true
@@ -48,15 +50,15 @@ func move_box(direction: Vector2) -> bool:
 			group_to_move = get_group_name(box)
 			var entitys_to_move = get_tree().get_nodes_in_group(group_to_move)
 			
-			for entity in entitys_to_move:
-				if !Globals.boxes_to_move.has(entity):
-					Globals.boxes_pool[entity] = null
-					Globals.boxes_to_move[entity] = 'check'
-			
 			if !collider.move_box(direction):
 				Globals.boxes_to_move[box] = 'stopped'
 				Globals.boxes_pool.erase(box)
 				return false
+				
+			for entity in entitys_to_move:
+				if !Globals.boxes_to_move.has(entity):
+					Globals.boxes_pool[entity] = null
+					Globals.boxes_to_move[entity] = 'check'
 			
 			Globals.boxes_pool.erase(box)
 			Globals.boxes_to_move[box] = 'moved'

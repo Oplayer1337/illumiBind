@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://32gavh0fr1f"]
+
+[ext_resource type="Texture2D" uid="uid://b0q4fpl14b38w" path="res://Art/ui/ControlsScreen/ControlsScreen.png" id="1_65cag"]
+[ext_resource type="Script" path="res://ui/controls_screen/ControlsScreen.gd" id="1_v2u2q"]
+[ext_resource type="Texture2D" uid="uid://dlsx4meudoat1" path="res://Art/ui/ControlsScreen/Menu_button.png" id="2_y42to"]
+
+[node name="ControlsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2u2q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 654.0
+
+[node name="Controls" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -51.0
+offset_top = -0.999999
+offset_right = 4045.0
+offset_bottom = 2047.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_65cag")
+expand_mode = 2
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 871.0
+offset_top = 546.0
+offset_right = 2103.0
+offset_bottom = 1058.0
+scale = Vector2(0.24, 0.24)
+texture_normal = ExtResource("2_y42to")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -25,6 +25,7 @@ func _on_body_entered(body):
 	
 
 func _on_body_exited(body):
+	
 	Globals.unactive_buttons[icon_name][get_parent()] = null
 	
 	sprite2D.visible = true

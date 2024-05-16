@@ -9,7 +9,7 @@ var boxes_pool: Dictionary = {}
 var unactive_buttons: Dictionary = {	'star': {},
 										'heart': {},
 										'diamond': {},
-										'tirangle': {},
+										'triangle': {},
 										'bulb': {}
 									}
 
@@ -17,7 +17,7 @@ func clear_unactive_buttons():
 	unactive_buttons = {	'star': {},
 							'heart': {},
 							'diamond': {},
-							'tirangle': {},
+							'triangle': {},
 							'bulb': {}
 						}
 

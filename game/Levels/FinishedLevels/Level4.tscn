@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://brkwjhle3nda"]
+[gd_scene load_steps=12 format=3 uid="uid://brkwjhle3nda"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel/States.gd" id="1_yvywi"]
 [ext_resource type="Texture2D" uid="uid://l6srsr4g0e80" path="res://Art/Tileset.png" id="2_hyff5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dluqd6jhc67vt" path="res://Entitys/Box/Box.tscn" id="6_bg815"]
 [ext_resource type="PackedScene" uid="uid://dmtnn81anhrut" path="res://Entitys/Gate/Gate.tscn" id="7_8bhag"]
 [ext_resource type="PackedScene" uid="uid://jsxvrcenm82r" path="res://Entitys/Button/Button.tscn" id="8_w8erd"]
+[ext_resource type="PackedScene" uid="uid://c1vthwb7dw5nk" path="res://Entitys/Spike/Spike.tscn" id="9_g0n76"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jceep"]
 texture = ExtResource("2_hyff5")
@@ -131,6 +132,7 @@ position = Vector2(512, 1024)
 [node name="Box3" parent="." instance=ExtResource("6_bg815")]
 position = Vector2(512, 512)
 metadata/Color = "green"
+metadata/Fragile = true
 
 [node name="Box2" parent="." instance=ExtResource("6_bg815")]
 position = Vector2(2048, 1280)
@@ -161,3 +163,7 @@ metadata/Icon = "star"
 [node name="Button3" parent="." instance=ExtResource("8_w8erd")]
 position = Vector2(260, 1027)
 metadata/Icon = "bulb"
+
+[node name="Spike" parent="." instance=ExtResource("9_g0n76")]
+position = Vector2(1024, 512)
+rotation = 3.14159

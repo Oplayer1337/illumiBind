@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6mqrchsu3tq8"]
+[gd_scene load_steps=11 format=3 uid="uid://c8f3qmuvfanrh"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel/States.gd" id="1_3mee2"]
 [ext_resource type="Texture2D" uid="uid://l6srsr4g0e80" path="res://Art/Tileset.png" id="2_r0qxq"]
@@ -121,9 +121,10 @@ zoom = Vector2(0.304, 0.304)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_28jex")]
-offset_top = 8.0
-offset_right = 1807.66
-offset_bottom = 1075.12
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 2279.66
+offset_bottom = 1386.12
 
 [node name="Box" parent="." instance=ExtResource("6_h0y0v")]
 position = Vector2(768, 1536)

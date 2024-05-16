@@ -131,7 +131,7 @@ metadata/Icon = "star"
 
 [node name="Button2" parent="." instance=ExtResource("6_irn0g")]
 position = Vector2(2308, 770)
-metadata/Icon = "heart"
+metadata/Icon = "triangle"
 
 [node name="Gate" parent="." instance=ExtResource("7_e1s62")]
 position = Vector2(1280, 256)
@@ -146,12 +146,12 @@ metadata/Icon = "star"
 [node name="Gate3" parent="." instance=ExtResource("7_e1s62")]
 position = Vector2(1536, 1280)
 scale = Vector2(1, 1)
-metadata/Icon = "heart"
+metadata/Icon = "triangle"
 
 [node name="Gate4" parent="." instance=ExtResource("7_e1s62")]
 position = Vector2(1280, 1280)
 scale = Vector2(1, 1)
-metadata/Icon = "heart"
+metadata/Icon = "triangle"
 
 [node name="Box" parent="." instance=ExtResource("8_frkb4")]
 position = Vector2(768, 256)

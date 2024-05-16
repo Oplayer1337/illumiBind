@@ -37,13 +37,13 @@ func _on_area_2d_body_entered(body):
 	var parent: Node2D = body.get_parent()
 	if parent.is_in_group("player") or parent.is_in_group("box"):
 		parent.add_to_group("static")
+		parent.remove_from_group("gate_closed")
 		has_body = true
 
 
 func _on_area_2d_body_exited(body):
-	await get_tree().create_timer(0.02).timeout
-	if has_body:
-		return
+	#await get_tree().create_timer(0.02).timeout
 	var parent: Node2D = body.get_parent()
 	parent.remove_from_group("static")
+	parent.add_to_group("gate_closed")
 	has_body = false

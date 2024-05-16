@@ -1,0 +1,273 @@
+[gd_scene load_steps=11 format=3 uid="uid://ce2515xq73gd"]
+
+[ext_resource type="Script" path="res://Levels/BaseLevel/States.gd" id="1_yymbq"]
+[ext_resource type="Texture2D" uid="uid://l6srsr4g0e80" path="res://Art/Tileset.png" id="2_qbk6q"]
+[ext_resource type="PackedScene" uid="uid://e5jksqiuj06a" path="res://Entitys/Player/player.tscn" id="3_ja7pv"]
+[ext_resource type="PackedScene" uid="uid://cgmw6t5kmarfv" path="res://Entitys/Flag/Flag.tscn" id="4_xbym0"]
+[ext_resource type="PackedScene" uid="uid://bs38kw427kitv" path="res://ui/pause_menu/pause menu.tscn" id="5_gc62h"]
+[ext_resource type="PackedScene" uid="uid://dluqd6jhc67vt" path="res://Entitys/Box/Box.tscn" id="6_m3yqw"]
+[ext_resource type="PackedScene" uid="uid://jsxvrcenm82r" path="res://Entitys/Button/Button.tscn" id="7_bewop"]
+[ext_resource type="PackedScene" uid="uid://dmtnn81anhrut" path="res://Entitys/Gate/Gate.tscn" id="8_ggwmp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jceep"]
+texture = ExtResource("2_qbk6q")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_3x0ve"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jceep")
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_yymbq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3x0ve")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 131072, 0, 3, 131072, 0, 5, 131072, 0, 6, 65536, 3, 7, 131072, 0, 65537, 0, 4, 131073, 0, 4, 196609, 0, 4, 196610, 196608, 0, 131074, 196608, 0, 65538, 196608, 0, 262144, 196608, 0, 262145, 0, 4, 262146, 65536, 1, 65536, 196608, 0, 131072, 196608, 0, 196608, 196608, 0, 11, 131072, 0, 327680, 196608, 0, 9, 131072, 0, 10, 131072, 0, 393216, 196608, 0, 458752, 196608, 0, 12, 131072, 0, 13, 131072, 0, 2, 65536, 3, 655360, 131072, 2, 14, 131072, 0, 655374, 131072, 0, 655373, 131072, 0, 655372, 131072, 0, 655371, 131072, 0, 655370, 131072, 0, 655369, 131072, 0, 655363, 131072, 0, 655364, 131072, 0, 655365, 131072, 0, 655367, 131072, 0, 655375, 131072, 0, 655376, 131072, 0, 655377, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 65554, 196608, 0, 131090, 196608, 0, 196626, 196608, 0, 262162, 196608, 0, 327698, 196608, 0, 393234, 196608, 0, 458770, 196608, 0, 524306, 196608, 0, 589842, 196608, 0, 18, 65536, 2, 655378, 196608, 2, 196612, 65536, 1, 196614, 65536, 0, 65542, 65536, 1, 65540, 196608, 0, 131076, 196608, 0, 4, 65536, 3, 8, 65536, 3, 196616, 196608, 0, 262152, 196608, 0, 327688, 196608, 0, 393224, 196608, 0, 458760, 65536, 1, 393218, 0, 1, 458754, 196608, 0, 524288, 0, 3, 589824, 0, 3, 655361, 131072, 3, 655362, 131072, 3, 589826, 196608, 3, 524290, 196608, 3, 524289, 65536, 3, 589825, 0, 0, 589828, 196608, 0, 524292, 196608, 0, 458756, 196608, 0, 393220, 196608, 0, 327684, 0, 1, 327686, 0, 1, 393222, 196608, 0, 655366, 131072, 3, 655368, 131072, 3, 589832, 0, 1, 327681, 0, 4, 393217, 0, 4, 458753, 0, 4, 327682, 0, 4, 327683, 0, 4, 65539, 0, 4, 131075, 0, 4, 196611, 0, 4, 262147, 0, 4, 393219, 0, 4, 458755, 0, 4, 524291, 0, 4, 589827, 0, 4, 262148, 0, 4, 262149, 0, 4, 262150, 0, 4, 262151, 0, 4, 65541, 0, 4, 131077, 0, 4, 196613, 0, 4, 327685, 0, 4, 393221, 0, 4, 458757, 0, 4, 524293, 0, 4, 589829, 0, 4, 524296, 0, 4, 589831, 0, 4, 458759, 0, 4, 393223, 0, 4, 327687, 0, 4, 196615, 0, 4, 131079, 0, 4, 65543, 0, 4, 131078, 0, 4, 65544, 196608, 0, 131080, 196608, 0, 589830, 196608, 0, 458758, 196608, 0, 589841, 0, 4, 65545, 0, 4, 65546, 0, 4, 65547, 0, 4, 65548, 0, 4, 131084, 0, 4, 131085, 0, 4, 131086, 0, 4, 131087, 0, 4, 65551, 0, 4, 65552, 0, 4, 65553, 0, 4, 131089, 0, 4, 131088, 0, 4, 65550, 0, 4, 65549, 0, 4, 131081, 0, 4, 131082, 0, 4, 131083, 0, 4, 196617, 0, 4, 196618, 0, 4, 262154, 0, 4, 196619, 65536, 0, 196620, 0, 4, 262156, 0, 4, 262157, 0, 4, 262158, 0, 4, 262159, 0, 4, 262160, 0, 4, 196624, 0, 4, 196625, 0, 4, 196621, 0, 4, 262161, 0, 4, 327697, 0, 4, 393233, 0, 4, 458769, 0, 4, 524305, 0, 4, 524304, 0, 4, 589840, 0, 4, 589839, 0, 4, 589838, 0, 4, 524301, 0, 4, 524300, 0, 4, 524299, 0, 4, 524298, 0, 4, 524297, 0, 4, 589833, 0, 4, 589834, 0, 4, 589835, 0, 4, 589836, 0, 4, 589837, 0, 4, 524303, 0, 4, 458767, 0, 4, 458768, 0, 4, 327696, 0, 4, 327695, 0, 4, 327694, 0, 4, 458765, 0, 4, 458764, 0, 4, 393228, 0, 4, 393227, 0, 4, 393226, 0, 4, 327690, 0, 4, 327689, 0, 4, 262153, 0, 4, 393225, 0, 4, 458763, 0, 4, 327692, 0, 4, 327691, 0, 4, 327693, 65536, 0, 393229, 0, 4, 524294, 196608, 0, 524295, 0, 4, 262155, 0, 4, 196622, 0, 4, 196623, 65536, 0, 393231, 131072, 0, 458766, 196608, 0, 393230, 131072, 1, 393232, 196608, 1, 524302, 65536, 1, 458761, 0, 4, 458762, 0, 4)
+
+[node name="Player" parent="." instance=ExtResource("3_ja7pv")]
+position = Vector2(264, 264)
+metadata/Color = "white"
+metadata/Fragile = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, 69)
+scale = Vector2(1.2, 1.2)
+anchor_mode = 0
+zoom = Vector2(0.24, 0.24)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_gc62h")]
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 2799.66
+offset_bottom = 1464.12
+
+[node name="Flag" parent="." instance=ExtResource("4_xbym0")]
+position = Vector2(4353, 1793)
+scale = Vector2(1, 1)
+metadata/Level = 7
+
+[node name="Button" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(259, 1797)
+metadata/Icon = "star"
+
+[node name="Button2" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(772, 256)
+metadata/Icon = "heart"
+
+[node name="Button3" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(772, 2307)
+metadata/Icon = "heart"
+
+[node name="Button4" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1283, 257)
+metadata/Icon = "diamond"
+
+[node name="Button5" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1795, 771)
+metadata/Icon = "diamond"
+
+[node name="Button6" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1283, 1795)
+metadata/Icon = "triangle"
+
+[node name="Button7" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1796, 1796)
+metadata/Icon = "triangle"
+
+[node name="Button8" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1284, 2307)
+metadata/Icon = "triangle"
+
+[node name="Button9" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(1795, 2308)
+metadata/Icon = "triangle"
+
+[node name="Button10" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(2563, 515)
+metadata/Icon = "bulb"
+
+[node name="Button11" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(3075, 257)
+metadata/Icon = "bulb"
+
+[node name="Button12" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(3587, 770)
+metadata/Icon = "bulb"
+
+[node name="Button13" parent="." instance=ExtResource("7_bewop")]
+position = Vector2(2820, 2051)
+metadata/Icon = "bulb"
+
+[node name="Gate" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(767, 765)
+scale = Vector2(1, 1)
+metadata/Icon = "star"
+
+[node name="Gate2" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(766, 1793)
+scale = Vector2(1, 1)
+metadata/Icon = "star"
+
+[node name="Gate3" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(1026, 1025)
+scale = Vector2(1, 1)
+metadata/Icon = "heart"
+
+[node name="Gate4" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(1536, 511)
+scale = Vector2(1, 1)
+metadata/Icon = "diamond"
+
+[node name="Gate5" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(2048, 2048)
+scale = Vector2(1, 1)
+metadata/Icon = "triangle"
+
+[node name="Gate6" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(3583, 2304)
+scale = Vector2(1, 1)
+metadata/Icon = "bulb"
+
+[node name="Gate7" parent="." instance=ExtResource("8_ggwmp")]
+position = Vector2(4352, 1536)
+scale = Vector2(1, 1)
+metadata/Icon = "bulb"
+
+[node name="Box" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(256, 1536)
+
+[node name="Box2" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(767, 1281)
+
+[node name="Box3" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(769, 1023)
+metadata/Color = "blue"
+
+[node name="Box4" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(1280, 768)
+metadata/Color = "green"
+
+[node name="Box5" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(1280, 1281)
+metadata/Color = "green"
+
+[node name="Box6" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(1793, 511)
+metadata/Color = "green"
+
+[node name="Box7" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(1792, 1539)
+metadata/Color = "green"
+
+[node name="Box15" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(2560, 1536)
+metadata/Color = "rg"
+
+[node name="Box16" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(2816, 1280)
+metadata/Color = "rg"
+
+[node name="Box10" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(3840, 2048)
+metadata/Color = "rg"
+
+[node name="Box12" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(4096, 2304)
+metadata/Color = "rg"
+
+[node name="Box11" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(3840, 2304)
+metadata/Color = "rb"
+
+[node name="Box13" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(4096, 2048)
+metadata/Color = "rb"
+
+[node name="Box14" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(2816, 1792)
+metadata/Color = "rb"
+
+[node name="Box17" parent="." instance=ExtResource("6_m3yqw")]
+position = Vector2(3584, 1280)
+metadata/Color = "rb"
