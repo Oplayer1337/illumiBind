@@ -214,4 +214,3 @@ func change_linked_box_position(box:Node2D, direction: Vector2):
 	var body = box.find_child("CollisionShape2D").get_parent()
 	var linked_target_position = body.position + direction * tile_size
 	body.position = body.position.move_toward(linked_target_position, speed)
-

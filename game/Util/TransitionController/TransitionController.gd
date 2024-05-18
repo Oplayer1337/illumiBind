@@ -7,7 +7,6 @@ func _ready():
 	white_transition.play_reset()
 
 func black_play():
-	print('Black played')
 	black_transition.play()
 	
 func white_play():

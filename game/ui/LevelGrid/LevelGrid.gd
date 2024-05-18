@@ -71,4 +71,7 @@ func _on_level_8_pressed():
 
 
 func _on_level_9_pressed():
-	SfxController.play_locked()
+	TransitionController.black_play()
+	SfxController.change_scene()
+	await get_tree().create_timer(1.2).timeout
+	get_tree().change_scene_to_packed(levels[9])

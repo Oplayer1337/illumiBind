@@ -19,7 +19,7 @@ func save_state():
 	var state = State.new()
 	#print("-----------------------")
 	for obj in get_tree().get_nodes_in_group("object"):
-		print(obj)
+		#print(obj)
 		var obj_state = {}
 		
 		var collision_shape = obj.find_child("CollisionShape2D")
@@ -40,14 +40,10 @@ func restore_state(state: State, curr_state: State):
 	for obj in get_tree().get_nodes_in_group("object"):
 		var id = obj.get_instance_id()
 		
-		print("----------------------")
 		if id in state.object_states:
 			var obj_state = state.object_states[id]
 			var collision_shape = obj.find_child("CollisionShape2D")		
 			var collision_shape_parent = collision_shape.get_parent()
-			print(obj)
-			print(obj_state)
-			print()
 			
 			if curr_state.object_states[id]["alive"]:
 				collision_shape_parent.global_position = obj_state["position"]

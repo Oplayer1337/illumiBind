@@ -11,7 +11,7 @@ var list_off_all_colors: Dictionary = {	'black': Color(0,0,0,1),
 										'red': Color(0.8,0.2,0.2,1),
 										'green': Color(0.2,0.8,0.2,1),
 										'blue': Color(0.2,0.2,0.8,1),
-										'rg': Color(0.8,0.8,0.2,1),
+										'rg': Color(1,0.7,0.2,1),
 										'rb': Color(0.8,0.2,0.8,1),
 										'gb': Color(0.2,0.8,0.8,1),
 										'white': Color(0.8,0.8,0.8,1)} 

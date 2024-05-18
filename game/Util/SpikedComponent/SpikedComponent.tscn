@@ -8,7 +8,7 @@ script = ExtResource("1_sx7uc")
 
 [node name="Spike_up" parent="." instance=ExtResource("2_aoklg")]
 visible = false
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(2.08165e-12, 256)
 
 [node name="Spike_down" parent="." instance=ExtResource("2_aoklg")]
 visible = false

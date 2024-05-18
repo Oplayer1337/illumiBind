@@ -38,9 +38,15 @@ func _ready():
 
 
 func _process(delta):
-	
-	if spike_up in spikes:
-		spike_up.position = body.position + Vector2(0,-256)
+	var pos_up = body.position + Vector2(0,-256)
+	var pos_down = body.position + Vector2(256,512)
+	var pos_right = body.position + Vector2(512,0)
+	var pos_left = body.position + Vector2(-256,256)
+	if spike_up in spikes and spike_up.position != pos_up:
+		spike_up.find_child("CollisionShape2D").disabled = true
+		await get_tree().create_timer(0.01).timeout
+		spike_up.position = pos_up
+		spike_up.find_child("CollisionShape2D").disabled = false
 	
 	if spike_down in spikes:
 		spike_down.position = body.position + Vector2(256,512)
