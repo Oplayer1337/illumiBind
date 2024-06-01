@@ -1,48 +1,52 @@
-# illumiBind demo release 💡💡💡
+# illumiBind demo release 💡💡💡💡
+[![ru](https://img.shields.io/badge/lang-ru-blue.svg)](https://github.com/Oplayer1337/illumiBind/blob/main/README.ru.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/Oplayer1337/illumiBind/blob/main/README.md)
 
-Вот короче моя игрушка, исходники для запуска игры в **браузере находятся** в **/docs** 🌐
+Here is my game, the source code to run the game in **browser** is in **/docs** 🌐
 
-Сам проект находится в **/game** _(версия godot 4.2.1)_ 💻
+The project itself is in **/game** _(version godot 4.2.1)_ 💻
 
-Исполняемые файлы находятся в **/release** _(.dmg для **macOS** и .exe для **Windows**)_ 🕹️
+The executables are in **/release** _(.dmg for **macOS** and .exe for **Windows**)_ 🕹️
 
-# **Приятной игры!** 🔥✨❤️‍🔥
+# Have fun playing!  🔥✨❤️‍🔥
 
-_(О багах можете писать в **тг**, или в **Issues**, хотя я сам скорее всего о них уже знаю)_ 🛠️
+_(You can post bugs in **telegram**, or in **Issues**, though I probably already know about them myself)_ 🛠️
 
-# [Сама игра](https://oplayer1337.github.io/illumiBind/)
+# [PLAY THE GAME](https://oplayer1337.github.io/illumiBind/)
 
-<img width="1440" alt="IllumiBind" src="https://github.com/Oplayer1337/illumiBind/assets/44051933/6413fe0f-b62e-4ae8-91d9-0f04ee0d9cd9">
+![image](https://github.com/Oplayer1337/illumiBind/assets/44051933/9e30e2b5-5285-42d3-8934-f8ffd2395f24)
 
-  Текущая версия:
+
+  Current version:
   * Web: **v0.2**
   * Mac: **v0.2**
   * Windows **v0.2**
 
 ## Changelog 
-Данные о последних обновлениях игры
+Data about the latest game updates
 
 ### **v0.2** [18/05/2024]
-  * Добавлено **еще 2 новых уровня!** _(теперь их **9**)_
-  > Эти уровни используют те самые шипастые объекты
-  * Исправлены баги, связанные с перемещением в меню
-  * Небольшие изменения в механике движения коробок _(сами разберетесь, что изменилось)_
-  * И еще мелкие багфиксы, связанные с движением коробок
+  * Added **two more new levels!** _(now there are **9**)_
+  > These levels use those spiky objects
+  * Fixed bugs related to moving in menus.
+  * Small changes in the mechanics of moving boxes _(you'll figure out what's changed)_
+  * And some other minor bugs related to box movement.
 
 ### **v0.1.2** [16/05/2024]
-  * Добавлено **2 новых уровня!** 
-  * Добавлены  **Шипастые** объекты _(игроки и коробки)_
-  > Шипастые объекты имеют шипы на своих гранях, которые ломают хрупкие объекты
-  * Немного изменен **4 уровень**
-  * Добавлено меню **Управления** _(в нем вы можете посмотреть, как играть)_
-  * Исправлен баг связанный с нажатием кнопок на **русской раскладке**
-  * Исправлен баг со сдвигом коробки, направленной на закрывающися ворота _(теперь точно должны работать корректно)_
-  * Мелкие багфиксы, связанные с движением коробок
+  * **Added** 2 new levels! 
+  * Added **Spiky** objects _(players and boxes)_
+  > Spiky objects have spikes on their edges that break fragile objects
+  * **Modified **Level 4** slightly
+  * Added **Controls** menu _(where you can see how to play)_
+  * Fixed a bug with pressing buttons in **Russian layout**
+  * Fixed a bug with shifting the box pointing at the closing gate _(it should work correctly now)_
+  * Small bugfixes related to box movement
 
 ### **v0.1.1** [15/05/2024]
-  * Добавлены **шипы** и **"хрупкие"** объекты _(игроки и коробки)_
-  > хрупкие объекты ломаются при взаимодействии с шипами.
-  * Исправлена некорректная коллизия при попадании коробок, на только что закрытые кнопки _(но не полностью)_
-  * Исправлен баг со спамом кнопки отмены _(теперь игрока не будет кидать по всему уровню)_
-  * Добавлена кнопка отключения музыки - **[M]** _(по просьбе Максима)_
-  * _(новых уровней не завезли)_
+  * **spikes** and **"fragile”** objects _(players and boxes)_ have been added.
+  > Fragile objects break when interacting with spikes.
+  * Fixed incorrect collision when boxes hit, on just closed buttons _(but not completely)_
+  * Fixed a bug with spamming the cancel button _(now the player will not be thrown all over the level)_
+  * **[M]** Music off button added _(at Maxim's request)_
+  * _ _(no new levels were added)_
+
